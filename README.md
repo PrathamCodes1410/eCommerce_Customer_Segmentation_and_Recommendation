@@ -39,9 +39,9 @@ The dataset consists of three CSV files capturing customer information, product 
 
 ---
 
-## Task 1: Exploratory Data Analysis & Business Insights
+## Exploratory Data Analysis & Business Insights
 
-EDA was performed to understand the underlying patterns in the data. The analysis yielded several key business insights that can inform strategic decisions.
+EDA was performed to understand the underlying patterns in the data. EDA analysis can be found in the EDA.ipynb notebook above. The analysis yielded several key business insights that can inform strategic decisions.
 
 ### Key Business Insights
 
@@ -62,9 +62,9 @@ EDA was performed to understand the underlying patterns in the data. The analysi
 
 ---
 
-## Task 2: Customer Segmentation / Clustering
+## Customer Segmentation / Clustering
 
-Customer segmentation was performed to group customers based on their profile and transaction history. Two clustering algorithms were evaluated: K-Means and Gaussian Mixture Models (GMM).
+Customer segmentation was performed to group customers based on their profile and transaction history. Two clustering algorithms were evaluated: K-Means and Gaussian Mixture Models (GMM). The Code for Customer Clustering will be available at Clusltering.ipynb
 
 ### Methodology
 *   Features were engineered from customer and transaction data, including total transactions, average transaction value, and preferred product categories.
@@ -81,19 +81,16 @@ GMM was identified as the superior model for this dataset based on clustering ev
 
 GMM provided more compact and well-separated clusters, effectively capturing the relationships between categorical features like `MostBoughtCategory`.
 
-#### Cluster Visualization (GMM)
-  <!-- You can replace this with a path to your own image in the repo -->
-
 ---
 
-## Task 3: Lookalike Model
+## Lookalike Model
 
 A lookalike model was developed to identify customers with similar profiles and purchasing behaviors. This model takes a `CustomerID` as input and returns the top 3 most similar customers along with a similarity score.
 
 ### Methodology
 The model defines similarity based on a combination of customer profile information (Region) and transaction history (total transactions, average spend, and product preferences). A similarity score is calculated for all other customers, and the top 3 are recommended.
 
-*(Further details on the model's logic and implementation can be found in the corresponding Jupyter Notebook.)*
+*(Further details on the model's logic and implementation can be found in the Lookalike_Model.ipynb)*
 
 ---
 
@@ -106,67 +103,3 @@ The model defines similarity based on a combination of customer profile informat
     *   `scikit-learn` for clustering (K-Means, GMM) and preprocessing.
     *   `matplotlib` & `seaborn` for data visualization.
     *   `Jupyter Notebook` for interactive development and analysis.
-
-## Project Structure
-
-```
-├── data/
-│   ├── Customers.csv
-│   ├── Products.csv
-│   └── Transactions.csv
-├── notebooks/
-│   ├── 01_EDA_and_Insights.ipynb
-│   ├── 02_Customer_Segmentation.ipynb
-│   └── 03_Lookalike_Model.ipynb
-├── reports/
-│   └── (Your PDF reports)
-├── Lookalike.csv
-├── README.md
-└── requirements.txt
-```
-
-## Setup and Usage
-
-To run this project locally, follow these steps:
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/your-username/ecommerce-customer-segmentation.git
-    cd ecommerce-customer-segmentation
-    ```
-
-2.  **Create and activate a virtual environment:**
-    ```bash
-    # For macOS/Linux
-    python3 -m venv venv
-    source venv/bin/activate
-
-    # For Windows
-    python -m venv venv
-    .\venv\Scripts\activate
-    ```
-
-3.  **Install the required libraries:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4.  **Launch Jupyter Notebook:**
-    ```bash
-    jupyter notebook
-    ```
-    You can then navigate to the `notebooks/` directory and run the files.
-
-## Future Work
-
-*   **RFM Analysis**: Implement Recency, Frequency, and Monetary (RFM) analysis for more granular customer segmentation.
-*   **Interactive Dashboard**: Develop an interactive dashboard using Streamlit or Dash to visualize insights and demonstrate the lookalike model in real-time.
-*   **Market Basket Analysis**: Apply association rule mining (e.g., Apriori algorithm) to discover product purchase associations.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
-## Contact
-
-[Your Name] - [Your Email] - [Link to your LinkedIn Profile]
